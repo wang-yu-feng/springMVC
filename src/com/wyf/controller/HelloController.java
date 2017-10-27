@@ -2,23 +2,22 @@ package com.wyf.controller;
 
 
 
+
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/mvc")
-@SessionAttributes("userName")
 public class HelloController {
 	
 	
 	@RequestMapping("/hello")
-	public ModelAndView hello(ModelMap map){
+	public ModelAndView hello(String userName){
 		ModelAndView mv = new ModelAndView();
-		map.addAttribute("userName", "test");
+		System.out.println(userName);
 		mv.setViewName("hello");
+		//return "redirect:/jsp/hello.jsp";//÷ÿ∂®œÚ
 		return mv;
 	}
 }
