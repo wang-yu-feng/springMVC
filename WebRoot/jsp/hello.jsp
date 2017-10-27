@@ -11,6 +11,10 @@
   </head>
   
   <body>
-    hello springMVC!
+    hello springMVC!<%=request.getSession().getAttribute("userName") %>
+    <form action="/mvc/hello.do">
+    	<input type="text" name="userName"><br/>
+    	<input type="submit" value="提交">
+    </form>
   </body>
 </html>
